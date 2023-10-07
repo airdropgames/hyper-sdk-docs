@@ -2,46 +2,42 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Initialization
 
-Let's discover **Docusaurus in less than 5 minutes**.
+This sample initialize the sdk with the needed parameters. Please replace the parameters according to your need. We're also support both module and commonJS
 
-## Getting Started
+## Module JS
 
-Get started by **creating a new site**.
+If you're currently using Module JS, you can import the sdk like this:
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+```javascript
+// module (export & import)
+import hyprSDK from 'nft-marketplace-sdk';
+const { NftMarketplaceSdk } = hyprSDK;
 
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
+const baseUrl = `<<HYPR_HTTP_URL>>`; // our base Url
+const apiKey = '<<YOUR_API_KEY>>'; // you can get it from our team
+const network = '<<YOUR_NETWORK>>';
+const sdk = new NftMarketplaceSdk(baeUrl, apiKey, network, {
+  enableLogging: true,
+  // ... any config needed
+});
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+## Common JS
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+If you're currently using Common JS, you can import the sdk like this:
 
-## Start your site
+```javascript
+const { NftMarketplaceSdk } = require('../../dist/index.js');
 
-Run the development server:
-
-```bash
-cd my-website
-npm run start
+async function main() {
+  const url = `<<HYPR_HTTP_URL>>`;
+  const key = `<<YOUR_API_KEY>>`; // you can get it from our team
+  const network = '<<YOUR_NETWORK>>';
+  const hyperSdk = new NftMarketplaceSdk(url, key, network, {
+    enableLogging: true,
+    // ... any config needed
+  });
+}
 ```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
