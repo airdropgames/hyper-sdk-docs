@@ -12,7 +12,7 @@ If you're currently using Module JS, you can import the sdk like this:
 
 ```javascript
 // module (export & import)
-import hyprSDK from 'nft-marketplace-sdk';
+import hyprSDK from '@hyperplaza/sdk';
 const { NftMarketplaceSdk } = hyprSDK;
 
 const baseUrl = `<<HYPR_HTTP_URL>>`; // our base Url
@@ -29,7 +29,7 @@ const sdk = new NftMarketplaceSdk(baeUrl, apiKey, network, {
 If you're currently using Common JS, you can import the sdk like this:
 
 ```javascript
-const { NftMarketplaceSdk } = require('../../dist/index.js');
+const { NftMarketplaceSdk } = require('@hyperplaza/sdk');
 
 async function main() {
   const url = `<<HYPR_HTTP_URL>>`;
