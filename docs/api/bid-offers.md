@@ -12,12 +12,12 @@ sidebar_position: 6
 
 you can create bid/offer transaction by calling the method `createBid` / `createOffer` depends on the kind of transaction that wants to be created
 
-```
-const hyprSDK = require('nft-marketplace-sdk');
+```javascript
+import hyprSDK from '@hyperplaza/sdk'
 const { NftMarketplaceSdk, BidOrder, OfferOrder, getUnixTimestampFromDateString } = hyprSDK;
 
 // example function to create bid order
-module.exports.createBidOrder = async (
+createBidOrder = async (
   userEmail,
   userAddress,
   network,
@@ -56,6 +56,7 @@ module.exports.createBidOrder = async (
 ## Params
 
 `BidOfferRequestParameters`
+
 | Name | Type | Description |
 | -------------- | ---------------------- | ----------------------------------------------------------------------- |
 | userAddress | string | the address of the user that wants to create the bid/offer |
@@ -68,8 +69,9 @@ module.exports.createBidOrder = async (
 | signature | string | the signature of the bid/offer |
 
 `ItemBidOfferParams`
+
 | Name | Type | Description |
-| -------------- | ---------------------- | ----------------------------------------------------------------------- |
+| ---- | ---- | ----------- |
 | value | string | the value of the item |
 | transferData | string | the transfer data of the item |
 
